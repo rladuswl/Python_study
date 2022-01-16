@@ -15,7 +15,7 @@ for i in range(1, N+1):
 else:  # for문 안에서 break를 당하지 않고 나오면(for문 끝까지 돌고 나오면) for-else 실행
     print(-1)
 
-'''
+'''해답
 if n<K:
     print(-1)
 '''

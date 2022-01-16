@@ -1,7 +1,8 @@
 import sys
-sys.stdin = open("input.txt", "rt")
+# sys.stdin = open("input.txt", "rt")
 
 ## k번째 수
+''' 내가 푼 답
 T = int(input())  # 테스트 케이스가 몇 번인지
 
 for t in range(1, T+1):
@@ -16,3 +17,14 @@ for t in range(1, T+1):
     for i in range(1, len(b)+1):
         if i == k:
             print("#{} {}".format(t, b[i-1]))
+'''
+
+T = int(input())  # 테스트 케이스가 몇 번인지
+
+for t in range(1, T+1):
+    n, s, e, k = map(int, input().split())
+
+    a = list(map(int, input().split()))
+    a = a[s-1:e]
+    a.sort()
+    print('#%d %d' %(t, a[k-1]))
