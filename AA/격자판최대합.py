@@ -1,6 +1,8 @@
 import sys
 sys.stdin = open("input.txt", "rt")
 
+# 해설 참고하기
+
 ## 격자판 최대합
 '''내 답안
 n = int(input())
