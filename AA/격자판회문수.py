@@ -1,5 +1,8 @@
 import sys
-#sys.stdin = open("input.txt", "rt")
+sys.stdin = open("input.txt", "rt")
+
+# 해설이 훨씬 효율적
+# 슬라이싱 기능 익히기
 
 ## 격자판 회문수
 '''내 답안
@@ -11,6 +14,7 @@ for a in range(7):
         col = []
         orirow =[]
         oricol =[]
+
         for j in range(0, 5):
             orirow.append(li[a][j + i])  # 원본으로 쓸 리스트
             oricol.append(li[j + i][a])  # 원본
