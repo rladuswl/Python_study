@@ -1,6 +1,8 @@
 import sys
 #sys.stdin = open("input.txt", "rt")
 
+# 못 풀음
+
 ## 증가수열 만들기 (그리디)
 n = int(input())
 a = list(map(int, input().split()))

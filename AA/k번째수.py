@@ -1,5 +1,5 @@
 import sys
-# sys.stdin = open("input.txt", "rt")
+sys.stdin = open("input.txt", "rt")
 
 ## k번째 수
 ''' 내가 푼 답
