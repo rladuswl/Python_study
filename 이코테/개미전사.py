@@ -1,3 +1,6 @@
+# https://www.youtube.com/watch?v=5Lu34WIx2Us&list=PLRx0vPvlEmdAghTr5mXQxGpHjWqSz0dgC&index=6
+# 다이나믹 프로그래밍
+# 못 풀음
 n = int(input())
 array = list(map(int, input().split()))
 
