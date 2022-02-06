@@ -51,6 +51,7 @@ for x in msg:
 print()
 
 print()
+
 for x in msg:
     if x.isalpha():  # 알파벳만 출력
         print(x, end=' ')
@@ -86,7 +87,7 @@ else:
     print('NO')
 '''
 
-## 2차원 리스트 생성과 접근 -> 표로 생각하기ㅏ
+## 2차원 리스트 생성과 접근 -> 표로 생각하기
 '''
 a = [[0]*3 for _ in range(3)]
 print(a)
@@ -112,9 +113,11 @@ plus_two = lambda x: x+2
 print(plus_two(1))
 '''
 # map(함수명, 자료) -> 인자 2개 가짐
+'''
 def plus_one(x):
     return x+1
 
 a = [1, 2, 3]
 print(list(map(plus_one, a)))
 print(list(map(lambda x: x+1, a)))
+'''
