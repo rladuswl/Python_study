@@ -35,7 +35,7 @@ print(len(visited) - 1)
 '''
 
 ## BFS 방식
-# 큐 방식 사용
+# 큐 방식 사용 (데큐가 아니라 리스트랑 다름없..)
 
 graph = {}
 
@@ -49,6 +49,7 @@ for j in range(m):
     a, b = map(int, input().split())
     graph[a].add(b)
     graph[b].add(a)
+#print(graph)
 
 def BFS(start, graph):
     queue = [start]
@@ -57,7 +58,9 @@ def BFS(start, graph):
             if i not in visited:
                 visited.append(i)
                 queue.append(i)
+                #print(queue)
 
 visited = []
 BFS(1, graph)
 print(len(visited) - 1)
+#print(visited)
