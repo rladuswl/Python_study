@@ -3,3 +3,5 @@ sys.stdin = open("input.txt", "rt")
 input = sys.stdin.readline
 
 ##
+
+if __name__ == '__main__':
