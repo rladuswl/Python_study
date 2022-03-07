@@ -1,5 +1,5 @@
 ## 수열 추측하기(순열, 파스칼 응용)
-
+import sys
 
 def DFS(L, sum):
     if L == n and sum == f:
