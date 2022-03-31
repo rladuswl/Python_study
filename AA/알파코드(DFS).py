@@ -1,5 +1,5 @@
 import sys
-#sys.stdin = open("input.txt", "rt")
+sys.stdin = open("input.txt", "rt")
 #input = sys.stdin.readline
 
 ## 알파코드(DFS)
