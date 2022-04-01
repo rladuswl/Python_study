@@ -4,10 +4,10 @@ input = sys.stdin.readline
 
 ## 송아지 찾기 (BFS : 상태트리탐색)
 
-# S>E 이면 최상단 노드 S부터 시작, S<E 이면 최상단 노드 E부터 시작
-# S부터 시작이라고 하면, 간선은 +1, -1, +5 로 세 갈래가 뻗음
+# 최상단 노드 S부터 시작
+# 간선은 +1, -1, +5 로 세 갈래가 뻗음
 # 해당 노드에서 3개의 간선을 모두 돌면서 큐에 매번 노드를 담음
-'''내 풀이
+'''내 풀이'''
 from collections import deque
 
 def bfs(N):
@@ -17,12 +17,13 @@ def bfs(N):
 
     while q:
         p = q.popleft()
+
         for x in lst:
-            if visited[p+x] == 0:  # 1 <= p+x <= 10000
+            if (1 <= p+x <= 10000) and visited[p+x] == 0:
                 dis[p+x] = dis[p] + 1
                 if p+x == E:
                     print(dis[p+x])
-                    exit(1)  # 처음으로 찾은게 최소임 따라서 출력하고 바로 끝내면 됨
+                    exit(0)  # 처음으로 찾은게 최소임 따라서 출력하고 바로 끝내면 됨
                 visited[p+x] = 1
                 q.append(p+x)
 
@@ -33,8 +34,8 @@ lst = [1, -1, 5]
 visited = [0]*10001
 dis = [0]*10001
 bfs(S)
-'''
 
+'''
 from collections import deque
 
 MAX = 10000
@@ -55,3 +56,4 @@ while dQ:
             ch[next] = 1
             dis[next] = dis[now] + 1
             dQ.append(next)
+'''
