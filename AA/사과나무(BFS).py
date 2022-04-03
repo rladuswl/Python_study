@@ -2,33 +2,45 @@ import sys
 #sys.stdin = open("input.txt", "rt")
 input = sys.stdin.readline
 
-'''BFS로 풀기'''
+from collections import deque
 
+# 최상단 노드는 n*n 격자판의 정중앙 좌표 값!
 
-''' BFS 방법이 아님
+'''bfs 방식으로 풀기'''
+def bfs(x, y):
+    global s
+    q = deque()
+    q.append((x, y))
+    visited[x][y] = 1
+    s += lst[x][y]
 
-# n의 중간 부분을 구한다. -> n//2
-# s, e를 정해서 s~e 사이의 값을 더하면 그것이 수확한 사과 개수가 된다.
-# s는 n//2 부터 시작하여 줄어들고, e는 n//2부터 시작하여 늘어난다.
-# 한 줄을 모두 수확하는 라인을 기준으로 그 후부터는 s는 늘어나고 e는 줄어든다.
-# 한 줄을 모두 수확하는 라인은 x라고 한다. x = n//2
+    L = 0
+    while True:
+        if L==n//2:
+            break
+        size = len(q)  # pop 하기 전에 size 구하기
+        # print("size", size)
+        for i in range(size):
+            tmp = q.popleft()
+            for j in range(4):
+                x = tmp[0] + dx[j]
+                y = tmp[1] + dy[j]
+                if visited[x][y] == 0:
+                    visited[x][y] = 1
+                    q.append((x, y))
+                    s += lst[x][y]
+        # print(L, tmp)
+        # for i in range(len(visited)):
+        #     print(visited[i])
+        L += 1
+
 
 n = int(input())
 lst = [list(map(int, input().split())) for _ in range(n)]
 
-s = n//2
-e = n//2
-result = sum(lst[0][s:e+1])
-
-for x in range(1, n):
-    if x <= n//2:
-        s -= 1
-        e += 1
-        result += sum(lst[x][s:e+1])
-    else:
-        s += 1
-        e -= 1
-        result += sum(lst[x][s:e+1])
-
-print(result)
-'''
+visited = [[0]*n for _ in range(n)]
+dx = [-1, 0, 1, 0]
+dy = [0, 1, 0, -1]
+s = 0
+bfs(n//2, n//2)
+print(s)
