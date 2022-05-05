@@ -7,6 +7,8 @@ sys.stdin = open("input.txt", "rt")
 # 높이가 1부터 100 이하
 from collections import deque
 
+sys.setrecursionlimit(10**6)
+
 def bfs(a, i, j):
     q = deque()
     q.append((i, j))
@@ -40,8 +42,9 @@ for i in range(n):
 
 ans = -2147000000 # 안전한 영역의 최대 개수
 cnt = 0
-for x in range(1, 101, 1):
+for x in range(0, 101, 1):
     visited = [[0] * n for _ in range(n)]
+    cnt = 0
     if x < mmin:
         result = 1
         if result > ans:
@@ -59,11 +62,7 @@ for x in range(1, 101, 1):
                 cnt += 1
     if cnt > ans:
         ans = cnt
-        cnt = 0
-    print()
-    for q in range(n):
-        for p in range(n):
-            print(visited[q][p], end='')
-        print()
 
-print("답", ans)
+
+
+print(ans)
