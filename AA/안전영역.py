@@ -2,9 +2,24 @@ import sys
 sys.stdin = open("input.txt", "rt")
 #input = sys.stdin.readline
 
-# 안전영역
+# 안전영역 (DFS, BFS 풀이)
 
 # 높이가 1부터 100 이하
+
+'''DFS 풀이
+
+
+
+
+
+
+
+
+
+
+'''
+
+'''BFS 풀이
 from collections import deque
 
 sys.setrecursionlimit(10**6)
@@ -66,3 +81,4 @@ for x in range(0, 101, 1):
 
 
 print(ans)
+'''
