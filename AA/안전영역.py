@@ -6,18 +6,51 @@ sys.stdin = open("input.txt", "rt")
 
 # 높이가 1부터 100 이하
 
-'''DFS 풀이
+'''DFS 풀이'''
+
+def dfs(x, y, h):
+    visited[i][j] = 1
+
+    for k in range(4):
+        xx = x + dx[k]
+        yy = y + dy[k]
+        if 0 <= xx < n and 0 <= yy < n:
+            if visited[xx][yy] == 0 and graph[xx][yy] > h:
+                dfs(xx, yy, h)
+
+
+n = int(input())
+graph = [list(map(int, input().split())) for _ in range(n)]
+
+dx = [0, 1, 0, -1]
+dy = [1, 0, -1, 0]
+
+mmax = -2147000000
+for i in range(n):
+    for j in range(n):
+        if graph[i][j] > mmax:
+            mmax = graph[i][j]
+
+cnt = 0
+res = 0
+for h in range(0, 100):  # 높이가 100 이면 안전영역은 0개이기 때문에 할 필요 X
+    if h == mmax:
+        break
+    cnt = 0
+    visited = [[0] * n for _ in range(n)]
+    for i in range(n):
+        for j in range(n):
+            if visited[i][j] == 0 and graph[i][j] > h:
+                cnt += 1
+                dfs(i, j, h)
+
+    res = max(res, cnt)
+print(res)
 
 
 
 
 
-
-
-
-
-
-'''
 
 '''BFS 풀이
 from collections import deque
