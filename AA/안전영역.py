@@ -8,7 +8,7 @@ sys.stdin = open("input.txt", "rt")
 
 '''DFS 풀이'''
 
-def dfs(x, y, h):
+def dfs(x, y, h):  # 높이 같이 전달해야 함
     visited[i][j] = 1
 
     for k in range(4):
