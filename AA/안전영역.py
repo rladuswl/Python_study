@@ -37,7 +37,7 @@ for h in range(0, 100):  # 높이가 100 이면 안전영역은 0개이기 때�
     if h == mmax:
         break
     cnt = 0
-    visited = [[0] * n for _ in range(n)]
+    visited = [[0] * n for _ in range(n)] # 본래 graph를 건들면 안되기 때문에 visited 함수 만들기
     for i in range(n):
         for j in range(n):
             if visited[i][j] == 0 and graph[i][j] > h:
