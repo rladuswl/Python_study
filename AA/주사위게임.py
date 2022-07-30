@@ -25,7 +25,7 @@ for i in range(n):
 print(max(list1))
 '''
 
-'''해답'''
+''' 강의 해답'''
 # 정렬을 먼저 시키기
 n = int(input())
 res = 0
