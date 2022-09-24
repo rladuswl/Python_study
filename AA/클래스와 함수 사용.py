@@ -2,6 +2,9 @@ import sys
 #sys.stdin = open("input.txt", "rt")
 #input = sys.stdin.readline
 
+## 문제 1번은 class, 2번과 3번은 def로 생성하기
+## main문에서 각 3개의 함수 호출하기
+
 import random
 
 def main():
