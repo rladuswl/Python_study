@@ -1,5 +1,5 @@
 import numpy as np
-import matplotlib.pyplot as plt
+import matplotlib데이터가공.pyplot as plt
 
 # 스타일 ggplot
 # x=0~100까지 100 나누기
